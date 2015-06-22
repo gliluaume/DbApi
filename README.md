@@ -1,4 +1,4 @@
-# DbApi
+# DbReader
 Apply on relational DBMS respecting some interfaces from .Net's System.Data assembly. It's a tiny set of classes helping object instaciation from a query result. It uses reflection to instanciate objects. It may not depend explicitly on DBMS.
 
 # Example
