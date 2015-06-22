@@ -37,7 +37,7 @@ public Kitty[] ReadAllKitties()
     return ret;
 }
 ```
-For a stored procedure PKG_READ.GET_KITTIES which returns described result above :
+For a stored procedure ```PKG_READ.GET_KITTIES``` which returns described result above (can also be done with an OraCommandDescriptor) :
 ```csharp
 public Kitty[] ReadAllKitties()
 {
@@ -62,6 +62,12 @@ Defines two classes used for properties tagging.
 
 ### Mapper
 Wraps DBMS commands.
+
+#### ICommandDescriptor
+Is an interface packing command parameters.
+
+#### OraCommandDescriptor
+An implementation of ```csharp ICommandDescriptor``` for Oracle.
 
 ### Readers
 Provides main classes. 
