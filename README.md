@@ -24,8 +24,7 @@ public class Kitty
 }
 ```
 
-Instanciating a Kitty collection will simply be :
-For a simple select query from KITTIES table :
+Instanciating a Kitty collection will simply be (for a simple select query from KITTIES table) :
 ```csharp
 public Kitty[] ReadAllKitties()
 {
@@ -37,7 +36,7 @@ public Kitty[] ReadAllKitties()
     return ret;
 }
 ```
-For a stored procedure ```PKG_READ.GET_KITTIES``` which returns described result above (can also be done with an OraCommandDescriptor) :
+Or for a stored procedure ```PKG_READ.GET_KITTIES``` which returns described result above (can also be done with an OraCommandDescriptor) :
 ```csharp
 public Kitty[] ReadAllKitties()
 {
