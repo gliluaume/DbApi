@@ -67,16 +67,16 @@ Wraps DBMS commands.
 Is an interface packing command parameters.
 
 #### OraCommandDescriptor
-An implementation of ```csharp ICommandDescriptor``` for Oracle.
+An implementation of ```ICommandDescriptor``` for Oracle.
 
 ### Readers
 Provides main classes. 
 
 #### LambdaDataReader 
-Allows retrieving generic collection from a query using IDataReader and DataReflectionReader. Is ```csharp IDisposable```, manages DBMS connection and resources disposing.
+Allows retrieving generic collection from a query using IDataReader and DataReflectionReader. Is ``` IDisposable```, manages DBMS connection and resources disposing.
 
 #### DataReflectionReader
-Instanciate object mapping public properties witch DbAttribute value equals query field name. Uses a ```csharp Dictionary<string, PropertyInfo>``` as a cache for performance reasons (reflection may be dramatically slow).
+Instanciate object mapping public properties witch DbAttribute value equals query field name. Uses a ``` Dictionary<string, PropertyInfo>``` as a cache for performance reasons (reflection may be dramatically slow).
 
 #### OracleWrapper
 Is an implementation of a LambdaDataReader specifying connection and command for oracle. Provides an easy way to get data from an oracle database.
