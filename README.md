@@ -21,14 +21,14 @@ Is an implementation of a LambdaDataReader specifying connection and command for
 
 # example
 Giving a query returning a cursor like:
-'''sql
+```
 ID    Number
 NAME  Varchar2
 AGE   Number
-'''
+```
 
 Build a class like :
-'''csharp
+```csharp
     [DbObject("Kitty")]
     public class Kitty
     {
@@ -40,10 +40,10 @@ Build a class like :
         public int Age { get; set; }
         public string DummyProp;
     }
-'''
+```
 
 Instanciating a Kitty collection will simply be:
-'''csharp
+```csharp
         static public Cat[] ReadAllKitties(bool cached)
         {
             const string connectionString = "Data Source=service;User Id=user;Password=pwd;";
@@ -53,4 +53,4 @@ Instanciating a Kitty collection will simply be:
 
             return ret;
         }
-'''
+```
