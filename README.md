@@ -27,30 +27,49 @@ NAME  Varchar2
 AGE   Number
 ```
 
-Build a class like :
+Build a class like (it just need to have a no parameter constructor) :
 ```csharp
-    [DbObject("Kitty")]
-    public class Kitty
-    {
-        [DbAttribute("ID")]
-        public int Id { get; set; }
-        [DbAttribute("NAME")]
-        public string Name { get; set; }
-        [DbAttribute("AGE")]
-        public int Age { get; set; }
-        public string DummyProp;
-    }
+[DbObject("Kitty")]
+public class Kitty
+{
+    [DbAttribute("ID")]
+    public int Id { get; set; }
+    [DbAttribute("NAME")]
+    public string Name { get; set; }
+    [DbAttribute("AGE")]
+    public int Age { get; set; }
+    public string DummyProp;
+}
 ```
 
-Instanciating a Kitty collection will simply be:
+Instanciating a Kitty collection will simply be :
+For a simple select query from KITTIES table :
 ```csharp
-        static public Cat[] ReadAllKitties(bool cached)
-        {
-            const string connectionString = "Data Source=service;User Id=user;Password=pwd;";
+public Kitty[] ReadAllKitties()
+{
+    const string connectionString = "Data Source=service;User Id=user;Password=pwd;";
 
-            OracleWrapper oracleWrapper = new OracleWrapper(connectionString);
-            SrgAgentVrs[] ret = oracleWrapper.GetData<SrgAgentVrs>("SELECT * FROM KITTIES").ToArray();
+    OracleWrapper oracleWrapper = new OracleWrapper(connectionString);
+    Kitty[] ret = oracleWrapper.GetData<Kitty>("SELECT * FROM KITTIES").ToArray();
 
-            return ret;
-        }
+    return ret;
+}
+```
+For a stored procedure PKG_READ.GET_KITTIES which returns described result above :
+```csharp
+public Kitty[] ReadAllKitties()
+{
+    const string connectionString = "Data Source=service;User Id=user;Password=pwd;";
+    
+    List<OracleParameter> oraParameters = new List<OracleParameter>();
+    oraParameters.Add(new OracleParameter("p_return_code", OracleDbType.Int32, ParameterDirection.Output));
+    oraParameters.Add(new OracleParameter("p_sql_code", OracleDbType.Int32, ParameterDirection.Output));
+    oraParameters.Add(new OracleParameter("p_error_text", OracleDbType.Varchar2, ParameterDirection.Output));
+    oraParameters.Add(new OracleParameter("cur_out", OracleDbType.RefCursor, ParameterDirection.Output));
+    
+    OracleWrapper oracleWrapper = new OracleWrapper(connectionString);
+    Kitty[] ret = oracleWrapper.GetData<Kitty>("PKG_READ.GET_KITTIES", oraParameters).ToArray();
+
+    return ret;
+}
 ```
