@@ -28,7 +28,7 @@ AGE   Number
 '''
 
 Build a class like :
-'''c#
+'''csharp
     [DbObject("Kitty")]
     public class Kitty
     {
@@ -43,7 +43,7 @@ Build a class like :
 '''
 
 Instanciating a Kitty collection will simply be:
-'''c#
+'''csharp
         static public Cat[] ReadAllKitties(bool cached)
         {
             const string connectionString = "Data Source=service;User Id=user;Password=pwd;";
