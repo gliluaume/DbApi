@@ -73,7 +73,7 @@ An implementation of ```csharp ICommandDescriptor``` for Oracle.
 Provides main classes. 
 
 #### LambdaDataReader 
-Allows retrieving generic collection from a query using IDataReader and DataReflectionReader.
+Allows retrieving generic collection from a query using IDataReader and DataReflectionReader. Is ```csharp IDisposable```, manages DBMS connection and resources disposing.
 
 #### DataReflectionReader
 Instanciate object mapping public properties witch DbAttribute value equals query field name. Uses a ```csharp Dictionary<string, PropertyInfo>``` as a cache for performance reasons (reflection may be dramatically slow).
