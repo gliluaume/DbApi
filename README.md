@@ -9,7 +9,7 @@ NAME  Varchar2
 AGE   Number
 ```
 
-Build a class like (it just need to have a no parameter constructor) :
+Build a class like (it just need to have a no parameter constructor and tagged properties to match query result fields) :
 ```csharp
 [DbObject("Kitty")]
 public class Kitty
