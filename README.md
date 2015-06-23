@@ -1,5 +1,5 @@
 # DbReader
-Applies on relational DBMS respecting some interfaces from .Net's ```System.Data assembly```. It's a tiny set of classes helping object instanciation from a query result. It uses reflection to instanciate objects. It may not depend explicitly on DBMS.
+Applies on relational DBMS respecting some interfaces from .Net's ```System.Data``` assembly. It's a tiny set of classes helping object instanciation from a query result. It uses reflection to instanciate objects. It may not depend explicitly on DBMS. It depends on ```Oracle.DataAccess``` for OracleWrapper.
 
 # Example
 Giving a query returning a cursor like:
@@ -78,6 +78,6 @@ Allows retrieving generic collection from a query using IDataReader and DataRefl
 Instanciate object mapping public properties witch DbAttribute value equals query field name. Uses a ``` Dictionary<string, PropertyInfo>``` as a cache for performance reasons (reflection may be dramatically slow).
 
 #### OracleWrapper
-Is an implementation of a LambdaDataReader specifying connection and command for Oracle &reg;. Provides an easy way to get data from an oracle database.
+Is an implementation of a ```LambdaDataReader``` specifying connection and command for Oracle&reg;. Provides an easy way to get data from an oracle database.
 
 
