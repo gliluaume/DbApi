@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiBdd.Readers
+namespace DbApi.Readers
 {
     public class LambdaDataReader : IDisposable
     {
