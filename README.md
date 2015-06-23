@@ -78,6 +78,6 @@ Allows retrieving generic collection from a query using IDataReader and DataRefl
 Instanciate object mapping public properties witch DbAttribute value equals query field name. Uses a ``` Dictionary<string, PropertyInfo>``` as a cache for performance reasons (reflection may be dramatically slow).
 
 #### OracleWrapper
-Is an implementation of a LambdaDataReader specifying connection and command for oracle. Provides an easy way to get data from an oracle database.
+Is an implementation of a LambdaDataReader specifying connection and command for Oracle &reg;. Provides an easy way to get data from an oracle database.
 
 
