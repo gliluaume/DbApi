@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiBdd.Mapper
+namespace DbApi.Mapper
 {
     public class OraCommandDescriptor : ICommandDescriptor
     {
