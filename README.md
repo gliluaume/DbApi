@@ -82,4 +82,8 @@ Is an implementation of a ```LambdaDataReader``` specifying connection and comma
 
 
 # Note
+## Compatibility
 Given ```csproj``` has been generated with Visual Studio 2013&reg;.
+
+## On perfs
+More tests have to be done. Treatments seem to be about as fast as explicit instanciation on a 1200 rows and 20 columns table.
