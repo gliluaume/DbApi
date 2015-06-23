@@ -11,8 +11,8 @@ AGE   Number
 
 Build a class like (it just need to have a no parameter constructor and tagged properties to match query result fields) :
 ```csharp
-[DbObject("Kitty")]
-public class Kitty
+[DbObject("Person")]
+public class Person
 {
     [DbAttribute("ID")]
     public int Id { get; set; }
@@ -24,21 +24,21 @@ public class Kitty
 }
 ```
 
-Instanciating a Kitty collection will simply be (for a simple select query from KITTIES table) :
+Instanciating a Person collection will simply be (for a simple select query from PERSONS table) :
 ```csharp
-public Kitty[] ReadAllKitties()
+public Person[] ReadAllPersons()
 {
     const string connectionString = "Data Source=service;User Id=user;Password=pwd;";
 
     OracleWrapper oracleWrapper = new OracleWrapper(connectionString);
-    Kitty[] ret = oracleWrapper.GetData<Kitty>("SELECT * FROM KITTIES").ToArray();
+    Person[] ret = oracleWrapper.GetData<Person>("SELECT * FROM PERSONS").ToArray();
 
     return ret;
 }
 ```
-Or for a stored procedure ```PKG_READ.GET_KITTIES``` which returns described result above (can also be done with an OraCommandDescriptor) :
+Or for a stored procedure ```PKG_READ.GET_PERSONS``` which returns described result above (can also be done with an OraCommandDescriptor) :
 ```csharp
-public Kitty[] ReadAllKitties()
+public Person[] ReadAllPersonsFromProc()
 {
     const string connectionString = "Data Source=service;User Id=user;Password=pwd;";
     
@@ -49,7 +49,7 @@ public Kitty[] ReadAllKitties()
     oraParameters.Add(new OracleParameter("cur_out", OracleDbType.RefCursor, ParameterDirection.Output));
     
     OracleWrapper oracleWrapper = new OracleWrapper(connectionString);
-    Kitty[] ret = oracleWrapper.GetData<Kitty>("PKG_READ.GET_KITTIES", oraParameters).ToArray();
+    Person[] ret = oracleWrapper.GetData<Person>("PKG_READ.GET_KITTIES", oraParameters).ToArray();
 
     return ret;
 }
