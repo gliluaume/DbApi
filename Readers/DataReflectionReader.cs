@@ -1,5 +1,4 @@
-﻿using DbApi.DbMapping;
-using DbApi.Tools;
+using DbApi.DbMapping;
 using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -65,7 +64,6 @@ namespace DbApi.Readers
                     ret.Add((T)obj);
                 }
             }
-            Console.Write("\n");
 
             return ret;
         }
@@ -77,7 +75,6 @@ namespace DbApi.Readers
             if (!this.IsKnown(columnName))
             {
                 this.AddInfo(columnName, GetObjectAttributeName<T>(columnName));
-                Logger.Log(ELogLevel.DEBUG, "New column name : " + columnName);
             }
 
             // On prend la propriété dans le cache.
