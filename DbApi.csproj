@@ -56,7 +56,6 @@
     <Compile Include="Readers\DataReflectionReader.cs" />
     <Compile Include="Readers\LambdaDataReader.cs" />
     <Compile Include="Readers\OracleWrapper.cs" />
-    <Compile Include="Tools\Logger.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
