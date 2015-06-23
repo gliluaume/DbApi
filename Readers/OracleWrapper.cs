@@ -1,7 +1,7 @@
-﻿using ApiBdd.DbMapping;
-using ApiBdd.Mapper;
-using ApiBdd.Readers;
-using ApiBdd.Tools;
+﻿using DbApi.DbMapping;
+using DbApi.Mapper;
+using DbApi.Readers;
+using DbApi.Tools;
 using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiBdd.Readers
+namespace DbApi.Readers
 {
     public class OracleWrapper : LambdaDataReader
     {
