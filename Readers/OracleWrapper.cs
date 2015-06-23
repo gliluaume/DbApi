@@ -1,7 +1,6 @@
-﻿using DbApi.DbMapping;
+using DbApi.DbMapping;
 using DbApi.Mapper;
 using DbApi.Readers;
-using DbApi.Tools;
 using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
