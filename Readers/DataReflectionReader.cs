@@ -1,5 +1,5 @@
-﻿using ApiBdd.DbMapping;
-using ApiBdd.Tools;
+﻿using DbApi.DbMapping;
+using DbApi.Tools;
 using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
