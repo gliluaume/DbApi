@@ -1,5 +1,5 @@
-﻿using ApiBdd.Mapper;
-using ApiBdd.Tools;
+﻿using DbApi.Mapper;
+using DbApi.Tools;
 using System;
 using System.Collections.Generic;
 using System.Data;
