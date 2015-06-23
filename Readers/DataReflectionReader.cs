@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiBdd.Readers
+namespace DbApi.Readers
 {
     public class DataReflectionReader
     {
