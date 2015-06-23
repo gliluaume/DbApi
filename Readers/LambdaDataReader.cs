@@ -1,5 +1,4 @@
-﻿using DbApi.Mapper;
-using DbApi.Tools;
+using DbApi.Mapper;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -84,9 +83,7 @@ namespace DbApi.Readers
             oracleCommand.CommandType = type;
 
             DateTime start = DateTime.Now;
-            Logger.Log(ELogLevel.INFO, "Execute oracle command");
             this.dataReader = oracleCommand.ExecuteReader();
-            Logger.Log(ELogLevel.INFO, "Execute oracle command took {0}", DateTime.Now.Subtract(start));
 
             return dataReader;
         }
