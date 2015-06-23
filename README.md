@@ -57,13 +57,13 @@ public Person[] ReadAllPersonsFromProc()
 
 
 ## Details
-Defines two classes used for properties tagging.
+It defines two classes used for properties tagging.
 
 ### Mapper
-Wraps DBMS commands.
+It wraps DBMS commands.
 
 #### ICommandDescriptor
-Is an interface packing command parameters.
+It is an interface packing command parameters.
 
 #### OraCommandDescriptor
 An implementation of ```ICommandDescriptor``` for Oracle.
