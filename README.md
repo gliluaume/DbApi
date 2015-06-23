@@ -1,5 +1,5 @@
 # DbReader
-Applies on relational DBMS respecting some interfaces from ```System.Data``` assembly of ```.Net```. It's a tiny set of classes helping object instanciation from a query result. It uses reflection to instanciate objects. It may not depend explicitly on DBMS. It depends on ```Oracle.DataAccess``` for OracleWrapper.
+It applies on relational DBMS respecting some interfaces from ```System.Data``` assembly of ```.Net```. It's a tiny set of classes helping object instanciation from a query result. It uses reflection to instanciate objects. It may not depend explicitly on DBMS. It depends on ```Oracle.DataAccess``` for OracleWrapper.
 
 # Example
 Giving a query returning a cursor like:
