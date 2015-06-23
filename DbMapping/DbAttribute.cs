@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiBdd.DbMapping
+namespace DbApi.DbMapping
 {
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
     public class DbAttribute : Attribute
