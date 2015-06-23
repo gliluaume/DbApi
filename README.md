@@ -1,5 +1,5 @@
 # DbReader
-Apply on relational DBMS respecting some interfaces from .Net's System.Data assembly. It's a tiny set of classes helping object instaciation from a query result. It uses reflection to instanciate objects. It may not depend explicitly on DBMS.
+Applies on relational DBMS respecting some interfaces from .Net's ```System.Data assembly```. It's a tiny set of classes helping object instanciation from a query result. It uses reflection to instanciate objects. It may not depend explicitly on DBMS.
 
 # Example
 Giving a query returning a cursor like:
@@ -9,7 +9,7 @@ NAME  Varchar2
 AGE   Number
 ```
 
-Build a class like (it just need to have a no parameter constructor and tagged properties to match query result fields) :
+Build a class like (it just needs to have a no parameter constructor and tagged properties to match query result fields) :
 ```csharp
 [DbObject("Person")]
 public class Person
