@@ -81,3 +81,5 @@ Instanciate object mapping public properties witch DbAttribute value equals quer
 Is an implementation of a ```LambdaDataReader``` specifying connection and command for Oracle&reg;. Provides an easy way to get data from an oracle database.
 
 
+# Note
+Given ```csproj``` has been generated with Visual Studio 2013&reg;.
