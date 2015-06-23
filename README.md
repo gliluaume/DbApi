@@ -49,7 +49,7 @@ public Person[] ReadAllPersonsFromProc()
     oraParameters.Add(new OracleParameter("cur_out", OracleDbType.RefCursor, ParameterDirection.Output));
     
     OracleWrapper oracleWrapper = new OracleWrapper(connectionString);
-    Person[] ret = oracleWrapper.GetData<Person>("PKG_READ.GET_KITTIES", oraParameters).ToArray();
+    Person[] ret = oracleWrapper.GetData<Person>("PKG_READ.GET_PERSONS", oraParameters).ToArray();
 
     return ret;
 }
