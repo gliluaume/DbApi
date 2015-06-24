@@ -1,5 +1,5 @@
-# DbReader
-It applies to relational DBMS respecting some interfaces from ```System.Data``` assembly of ```.Net```. It's a tiny set of classes helping object instanciation from a query result. Object instanciation is done by reflection.
+# How to read a database
+DbApi applies to relational DBMS respecting some interfaces from ```System.Data``` assembly of ```.Net```. It's a tiny set of classes helping object instanciation from a query result. Object instanciation is done by reflection.
 
 # Example
 Giving a query returning a cursor like:
