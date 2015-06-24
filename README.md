@@ -2,14 +2,14 @@
 DbApi applies to relational DBMS respecting some interfaces from ```System.Data``` assembly of ```.Net```. It's a tiny set of classes helping object instanciation from a query result. Object instanciation is done by reflection. DbApi projects depends on ```Oracle.Database``` only for the ```OracleWrapper``` which defines shortcuts to use to read an Oracle Database. Others wrappers could be defined to extends DbApi to other DBMS.
 
 # Example
-Giving a query returning a cursor like:
+Giving a query returning a cursor as follow :
 ```
 ID    Number
 NAME  Varchar2
 AGE   Number
 ```
 
-Build a class like (it just needs to have a no parameter constructor and tagged properties to match query result fields) :
+Giving a class like (it just needs to have a no parameter constructor and tagged properties to match query result fields) :
 ```csharp
 [DbObject("Person")]
 public class Person
