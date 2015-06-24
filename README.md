@@ -1,5 +1,5 @@
 # How to read a database
-DbApi applies to relational DBMS respecting some interfaces from ```System.Data``` assembly of ```.Net```. It's a tiny set of classes helping object instanciation from a query result. Object instanciation is done by reflection. DbApi projects depends on ```Oracle.Database``` only for the ```OracleWrapper``` which defines shortcuts to use to read an Oracle Database. Others wrappers could be defined to extends DbApi to other DBMS.
+DbApi applies to relational DBMS respecting some interfaces from ```System.Data``` assembly of ```.Net```. It's a tiny set of classes helping object instanciation from a query result. Object instanciation is done by reflection. DbApi projects depends on ```Oracle.DataAccess.Client``` only for the ```OracleWrapper``` and ```OraCommandDescriptor```which define shortcuts to use with an Oracle Database. Others wrappers could be defined to extends DbApi to other DBMS.
 
 # Example
 Giving a query returning a cursor as follow :
