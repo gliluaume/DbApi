@@ -1,5 +1,5 @@
 # How to read a database
-DbApi applies to relational DBMS respecting some interfaces from ```System.Data``` assembly of ```.Net```. It's a tiny set of classes helping object instanciation from a query result. Object instanciation is done by reflection.
+DbApi applies to relational DBMS respecting some interfaces from ```System.Data``` assembly of ```.Net```. It's a tiny set of classes helping object instanciation from a query result. Object instanciation is done by reflection. DbApi projects depends on ```Oracle.Database``` only for the ```OracleWrapper``` which defines shortcuts to use to read an Oracle Database. Others wrappers could be defined to extends DbApi to other DBMS.
 
 # Example
 Giving a query returning a cursor like:
@@ -57,7 +57,7 @@ public Person[] ReadAllPersonsFromProc()
 
 
 ## Details
-It defines two classes used for properties tagging.
+Two classes are define for properties tagging.
 
 ### Mapper
 It wraps DBMS commands.
@@ -85,5 +85,5 @@ Is an implementation of a ```LambdaDataReader``` specifying connection and comma
 ## Compatibility
 Given ```csproj``` has been generated with Visual Studio 2013&reg;.
 
-## On perfs
+## About perfs
 More tests have to be done. Treatments seem to be about as fast as explicit instanciation on a 1200 rows and 20 columns table.
