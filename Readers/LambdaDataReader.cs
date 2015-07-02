@@ -15,8 +15,6 @@ namespace DbApi.Readers
         protected IDbCommand dbCommand;
         protected IDbConnection connection;
 
-        public string RootName { get; set; }
-        public string ObjectName { get; set; }
         public string ConnectionString { get; set; }
 
         public LambdaDataReader(string connectionString)
