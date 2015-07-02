@@ -52,19 +52,30 @@ namespace DbApi.Readers
 
                         PropertyInfo pi = GetCachedObjectAttributeName<T>(columnName);
 
-                        if (pi.PropertyType == typeof(int))
-                        {
-                            pi.SetValue(obj, int.Parse(strVal));
-                        }
-                        else if (pi.PropertyType == typeof(String))
-                        {
-                            pi.SetValue(obj, strVal);
-                        }
+                        pi.SetValue(obj, ParseString(pi.PropertyType, strVal));
                     }
                     ret.Add((T)obj);
                 }
             }
 
+            return ret;
+        }
+
+        private object ParseString(Type type, string strValue)
+        {
+            object ret = null;
+            if (type == typeof(int))
+            {
+                ret = int.Parse(strValue);
+            }
+            else if (type == typeof(bool))
+            {
+                ret = (int.Parse(strValue) == 1);
+            }
+            else if (type == typeof(String))
+            {
+                ret = strValue;
+            }
             return ret;
         }
 
