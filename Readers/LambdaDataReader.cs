@@ -12,7 +12,7 @@ namespace DbApi.Readers
     public class LambdaDataReader : IDisposable
     {
         protected IDataReader dataReader;
-        protected IDbCommand oracleCommand;
+        protected IDbCommand dbCommand;
         protected IDbConnection connection;
 
         public string RootName { get; set; }
@@ -57,7 +57,7 @@ namespace DbApi.Readers
             return ret;
         }
 
-        private IDataReader GetReader<T, U>(string commandText, IEnumerable<IDataParameter> oraParameters, CommandType type = CommandType.StoredProcedure)
+        private IDataReader GetReader<T, U>(string commandText, IEnumerable<IDataParameter> dbParameters, CommandType type = CommandType.StoredProcedure)
             where T : DbConnection, new()
             where U : DbCommand, new()
         {
@@ -69,21 +69,21 @@ namespace DbApi.Readers
             connection.Open();
 
             // Construit la commande
-            this.oracleCommand = new U();
-            this.oracleCommand.CommandText = commandText;
-            this.oracleCommand.Connection = this.connection;
+            this.dbCommand = new U();
+            this.dbCommand.CommandText = commandText;
+            this.dbCommand.Connection = this.connection;
 
-            if (null != oraParameters)
+            if (null != dbParameters)
             {
-                foreach (IDataParameter oraParameter in oraParameters)
+                foreach (IDataParameter dbParameter in dbParameters)
                 {
-                    oracleCommand.Parameters.Add(oraParameter);
+                    dbCommand.Parameters.Add(dbParameter);
                 }
             }
-            oracleCommand.CommandType = type;
+            dbCommand.CommandType = type;
 
-            DateTime start = DateTime.Now;
-            this.dataReader = oracleCommand.ExecuteReader();
+            this.dataReader = dbCommand.ExecuteReader();
+            
 
             return dataReader;
         }
@@ -100,9 +100,9 @@ namespace DbApi.Readers
                 this.dataReader.Close();
                 this.dataReader.Dispose();
             }
-            if (null != this.oracleCommand)
+            if (null != this.dbCommand)
             {
-                this.oracleCommand.Dispose();
+                this.dbCommand.Dispose();
             }
 
             if (null != this.connection)
