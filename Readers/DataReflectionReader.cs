@@ -51,8 +51,11 @@ namespace DbApi.Readers
                         string columnName = reader.GetName(i);
 
                         PropertyInfo pi = GetCachedObjectAttributeName<T>(columnName);
-
-                        pi.SetValue(obj, ParseString(pi.PropertyType, strVal));
+                        if (null != pi)
+                        {
+                            pi.SetValue(obj, ParseString(pi.PropertyType, strVal));    
+                        }
+                        
                     }
                     ret.Add((T)obj);
                 }
